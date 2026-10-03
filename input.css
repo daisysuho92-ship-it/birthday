@@ -1,0 +1,711 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #fff7fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom animations */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.animate-pop {
+  animation: pop 0.7s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 15s linear infinite;
+}
+
+/* ========================================
+   PRELOADER ANIMATIONS
+======================================== */
+
+@keyframes loaderHeart {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+#loaderHeart {
+
+  animation:
+    loaderHeart
+    1.2s
+    ease-in-out
+    infinite;
+
+  transition:
+    transform
+    0.4s
+    ease;
+
+}
+
+/* =========================================
+   BIRTHDAY PRELOADER
+========================================= */
+
+.birthday-preloader {
+  animation: preloaderExit 1.3s
+    cubic-bezier(0.77, 0, 0.18, 1)
+    4s forwards;
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.loader-heart {
+  font-size: 72px;
+
+  animation: heartBeat 1.1s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================
+   LOADING BAR
+========================================= */
+
+.loading-bar {
+  width: 0%;
+  height: 100%;
+
+  border-radius: 9999px;
+
+  background: #ec4899;
+
+  animation: loadingBar 4s
+    cubic-bezier(0.4, 0, 0.2, 1)
+    forwards;
+}
+
+
+/* =========================================
+   FLOATING DECORATIONS
+========================================= */
+
+.preloader-decoration {
+  position: absolute;
+
+  color: #f9a8d4;
+
+  opacity: 0.6;
+
+  pointer-events: none;
+}
+
+.decoration-1 {
+  left: 10%;
+  top: 20%;
+
+  font-size: 40px;
+
+  animation: floating 4s ease-in-out infinite;
+}
+
+.decoration-2 {
+  right: 12%;
+  top: 25%;
+
+  font-size: 50px;
+
+  animation: floating 5s ease-in-out infinite;
+}
+
+.decoration-3 {
+  left: 18%;
+  bottom: 20%;
+
+  font-size: 30px;
+
+  animation: floating 4.5s ease-in-out infinite;
+}
+
+.decoration-4 {
+  right: 18%;
+  bottom: 25%;
+
+  font-size: 35px;
+
+  animation: floating 6s ease-in-out infinite;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+@keyframes loadingBar {
+
+  0% {
+    width: 0%;
+  }
+
+  20% {
+    width: 20%;
+  }
+
+  40% {
+    width: 42%;
+  }
+
+  60% {
+    width: 64%;
+  }
+
+  80% {
+    width: 84%;
+  }
+
+  95% {
+    width: 96%;
+  }
+
+  100% {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================
+   HEART BEAT
+========================================= */
+
+@keyframes heartBeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+
+}
+
+
+/* =========================================
+   FLOATING
+========================================= */
+
+@keyframes floating {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-25px)
+      rotate(8deg);
+  }
+
+}
+
+
+/* =========================================
+   SLIDE DOWN
+========================================= */
+
+@keyframes preloaderExit {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+    visibility: hidden;
+  }
+
+}
+/* ========================================
+   BIRTHDAY CAKE
+======================================== */
+
+.candle-flame {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: candleFlame 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes candleFlame {
+
+  from {
+    transform: scale(1) rotate(-3deg);
+  }
+
+  to {
+    transform: scale(1.15) rotate(3deg);
+  }
+
+}
+
+
+/* ========================================
+   BLOWN OUT CANDLE
+======================================== */
+
+.flame-out {
+  animation: flameOut 0.5s ease forwards;
+}
+
+@keyframes flameOut {
+
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.4);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+}
+
+
+/* ========================================
+   WISH MESSAGE
+======================================== */
+
+.wish-show {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+#wishMessage {
+  transform: translateY(-25px) scale(0.9);
+}
+
+
+/* ========================================
+   CELEBRATION PARTICLES
+======================================== */
+
+.celebration-particle {
+  position: absolute;
+  font-size: 28px;
+  pointer-events: none;
+  animation: celebrationBurst 1.8s ease-out forwards;
+}
+
+@keyframes celebrationBurst {
+
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.5) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate(var(--x), var(--y))
+      scale(1.4)
+      rotate(360deg);
+  }
+
+}
+
+
+/* ========================================
+   CAKE CELEBRATION
+======================================== */
+
+.cake-celebrate {
+  animation: cakeCelebrate 0.8s ease-in-out;
+}
+
+@keyframes cakeCelebrate {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-12px) rotate(-2deg);
+  }
+
+  60% {
+    transform: translateY(5px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+/* ========================================
+   BALLOON POP
+======================================== */
+
+.balloon {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.balloon-pop {
+  animation: balloonPop 0.35s ease forwards !important;
+}
+
+
+@keyframes balloonPop {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  40% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+}
+
+/* Balloon thread */
+.balloon-thread {
+  width: 2px;
+  height: 55px;
+  margin: 0 auto;
+  background: linear-gradient(
+    to bottom,
+    #f9a8d4,
+    #fbcfe8,
+    transparent
+  );
+  position: relative;
+}
+
+.balloon-thread::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f9a8d4;
+  transform: translateX(-50%);
+}
+/* ================================
+   ZOOM OUT + BLUR HEADING
+================================ */
+
+.zoom-blur-heading {
+  opacity: 0;
+  filter: blur(18px);
+  transform: scale(1.35);
+  animation: zoomBlurOut 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes zoomBlurOut {
+  0% {
+    opacity: 0;
+    filter: blur(18px);
+    transform: scale(1.35);
+  }
+
+  45% {
+    opacity: 0.7;
+    filter: blur(8px);
+    transform: scale(1.15);
+  }
+
+  75% {
+    opacity: 0.95;
+    filter: blur(3px);
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+/* =================================
+   HERO HEADING ZOOM + BLUR
+================================= */
+
+.hero-zoom-blur {
+  opacity: 0;
+  filter: blur(20px);
+  transform: scale(1.4);
+}
+
+/* Added by JavaScript AFTER preloader */
+/* Character-by-character headings */
+
+#heroHeading,
+#heroName {
+  opacity: 0;
+}
+
+#heroHeading.typing,
+#heroName.typing {
+  opacity: 1;
+}
+
+#heroHeading .char,
+#heroName .char {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px) scale(1.15);
+  animation: charAppear 0.45s ease forwards;
+}
+
+@keyframes charAppear {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px) scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =================================
+   CUSTOM SQUARE CURSOR
+================================= */
+
+/* Hide browser's default cursor */
+html,
+html *,
+body,
+body * {
+  cursor: none !important;
+}
+
+/* Custom square */
+#customCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 12px;
+  height: 12px;
+
+  background: #ec4899;
+  border: 2px solid white;
+  border-radius: 3px;
+
+  pointer-events: none;
+  z-index: 2147483647;
+
+  transform: translate(-50%, -50%);
+
+  box-shadow:
+    0 0 10px rgba(236, 72, 153, 0.7),
+    0 0 25px rgba(236, 72, 153, 0.35);
+
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    border-radius 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Mobile: restore normal cursor */
+@media (max-width: 768px) {
+  html,
+  html *,
+  body,
+  body * {
+    cursor: auto !important;
+  }
+
+  #customCursor {
+    display: none;
+  }
+}
+
+/* Custom Square Cursor */
+html,
+html *,
+body,
+body * {
+  cursor: none !important;
+}
+
+#customCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 12px;
+  height: 12px;
+
+  background: #ec4899;
+  border: 2px solid white;
+  border-radius: 3px;
+
+  pointer-events: none;
+  z-index: 2147483647;
+
+  transform: translate(-50%, -50%);
+
+  box-shadow:
+    0 0 10px rgba(236, 72, 153, 0.7),
+    0 0 25px rgba(236, 72, 153, 0.35);
+
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    border-radius 0.2s ease,
+    background 0.2s ease;
+
+  opacity: 1;
+}
+
+/* Keep normal cursor on mobile */
+@media (max-width: 768px) {
+  html,
+  html *,
+  body,
+  body * {
+    cursor: auto !important;
+  }
+
+  #customCursor {
+    display: none;
+  }
+}
