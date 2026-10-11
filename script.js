@@ -387,76 +387,58 @@ function openLoveLetter() {
 
 
     <div class="small-title">
-      A Little Letter For You
+      A Beautiful Letter For You
     </div>
 
 
     <h1>
-      To My Sadaf ❤️
+      To My Sadaf 💗
     </h1>
 
 
     <div class="letter-text">
 
 
-      <p>
-        My love,
-      </p>
+     <p>
+          MY LOVE,
+        </p>
 
+        <p>
+          I LOVE YOU MY SADAF 💗. I love you more than words can explain and more than Anything. You are my everything, my heart, my soul, my peace , my home and the reason behind my smile 💗✨.
+        </p>
 
-      <p>
-        Today is your special day, and I wanted to give you
-        something that comes straight from my heart.
-      </p>
+        <p>
+          With you i feel complete, and i want to spend every moment of my life with you MY SADAF 💗. You are the most precious to me most beautiful gift, and and I love every sec when im with you , you really means a lot to me my begum ✨
+        </p>
 
+        <p>
+          I appriciate all the things you do for me the way you make me smile 😌💕 , make me laugh ✨, take care of me 💗 , get anger with me 😂💗 and many more 😋😌💗 and and ik this surpise is not enough but i will do everything for you to make you happy and see your smile , and also believe me this suprise is too too too small for the love i have for you my darling 💗✨.
+        </p>
 
-      <p>
-        You are someone who has made so many moments in my life
-        feel more beautiful. Your smile, your presence, and all
-        those little things about you mean more to me than I can
-        ever properly explain.
-      </p>
+        <p>
+          IM ALWAYSS BY YOUR SIDE , NO MATTER WHAT YOU ALWAYSS FOUND ME WITH YOU FOREVER EVER ❤️
+        </p>
 
+        <p>
+          And a very very very big HAPPY BIRTHDAY to you MY SADAF and I HOPE TODAY IS AS BEAUTIFUL AS YOU ARE 💗✨ and its brings you smile and make you happay as you make me happy 😌💗
+        </p>
 
-      <p>
-        On your birthday, I just want you to know how special
-        you are. You deserve happiness, love, laughter, and all
-        the beautiful things life has to offer.
-      </p>
+        <p>
+          Again Happy Birthday, my SHREEK E HAYAT. 💗
+        </p>
 
+        <p class="pt-4 font-serif text-xl text-pink-600">
+          With all my love,<br />
+          Your Subhan 💗
+        </p>
 
-      <p>
-        I hope this new year of your life brings you everything
-        your heart wishes for.
-      </p>
-
-
-      <p>
-        And whenever you feel like the world is getting a little
-        difficult, I hope you remember that there is someone
-        who thinks you are incredibly special. ❤️
-      </p>
-
-
-      <p>
-        Happy Birthday, beautiful. 🎂💗
-      </p>
-
-
-      <p class="signature">
-
-        With all my love,<br><br>
-
-        Azaan ❤️
-
-      </p>
 
 
     </div>
 
 
     <div class="bottom-hearts">
-      💕 ✨ 💕
+      💗 ✨ 💗
     </div>
 
 
@@ -1168,3 +1150,28 @@ if (customCursor) {
   });
 
 }
+
+// ========================================
+// MAGNETIC EFFECT FOR ALL BUTTONS
+// ========================================
+
+const magneticButtons = document.querySelectorAll("button");
+
+magneticButtons.forEach((button) => {
+  button.addEventListener("mousemove", (e) => {
+    const rect = button.getBoundingClientRect();
+
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+
+    // Magnetic strength
+    const strength = 0.25;
+
+    button.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+  });
+
+  button.addEventListener("mouseleave", () => {
+    button.style.transform = "";
+  });
+});
+
